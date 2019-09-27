@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>JavaScript Array</title>
+<style type="text/css">
+
+#result{
+	width: 500px;
+	height: 300px;
+	border: 2px solid gray;
+
+}
+</style>
+
+
+</head>
+<body>
+
+<h3>JavaScript Array</h3>
+
+<div id="result">
+
+
+</div>
+
+
+<script type="text/javascript">
+
+// [ window.onload ]
+// : Dom tree가 memory에 모두 올라온 후 이 함수 수행하라!
+window.onload = function () {
+	
+	
+	
+}
+
+
+const log = console.log;
+
+let x = [3,6,21,25,100];
+let y = [3,11,22,33,44];
+
+// [.concat()]
+// : merge 시켜줌                                                                                                              
+let num = x.concat(y);   //-> 내부적으로 위치 index로 관리되기 때문에 3이 중복되어도 그대로 출력 됨
+log(num);
+
+//num.forEach(i=> log(i));
+
+//정렬 
+num.sort();
+log(num); //-> 숫자순이 아니라 문자처럼 이상하게 정렬됨 ...와이...
+
+//오름차순 정렬 함수
+num.sort((a,b)=>{ return a-b});
+log(num);
+
+//내림차순 정렬 함수
+num.sort((a,b)=>{ return b-a});
+log(num);
+
+num.forEach(data => log(data)); //-> 내림차순 정렬된 대로 출력됨
+
+//filtering 해서 33보다 큰 data만 출력
+num.filter(i => i>33).forEach(data => log(data));
+log(num);  //-> num에는 filtering 된 것과 상관없이 원래 data 그대로 있음
+
+//화면에 찍기
+//num.filter(i => i>33).forEach(data => document.write("<h5>" + data + "</h5>"));
+
+//화면에 있는 박스
+let disp = document.getElementById("result");
+//disp.innerHTML = "<h3>!!!</h3>";
+    //-> .value는 input창에만! 나머지는 innerText or innerHTML 
+    //-> innerText로 하면 <h3> tag도 data로 출력시킴
+
+
+let tag="";
+
+num.filter(i => i>33).forEach(data => tag+= ("<h3>" + data +"</h3>"));
+    
+disp.innerHTML = tag;
+
+
+</script>
+
+
+
+
+</body>
+</html>

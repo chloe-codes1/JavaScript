@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>JavaScript Form</title>
+
+<script type="text/javascript">
+
+function add() {
+	let x = document.getElementById("x").value;
+	let y = document.getElementById("y").value;
+	let sum = parseInt(x) + parseInt(y); //-> JavaScript는 형변환 parseInt로 함!
+	document.getElementById("sum").value = sum;
+	
+	let flag = confirm("서버로 제출 할까요?");
+	return flag;
+}
+
+</script>
+
+</head>
+<body>
+
+<h3> Add Form JavaScript </h3>
+
+<form action="process.jsp" method="get">
+
+	<input type="text" id="x" name="x"> +
+	<input type="text" id="y" name="y"> =
+	<input type="text" id="sum" name="sum">
+	<br>
+	<br>
+	<input type="button" value="Add" onclick="add()"> <!-- type="button"이면 서버로 안보내짐 -->
+	<input type="submit" value="Add submit" onclick="return add()"> <!-- 서버로 보내고 싶을 땐 type="submit" -->
+						 					<!-- 보통 유효성 check를 할 때 return을 써서 확인하고, 조건에 맞을 때에만 서버로 보냄 -->
+	<input type="submit">
+	<input type="reset">
+	
+
+
+
+
+</form>
+
+</body>
+</html>

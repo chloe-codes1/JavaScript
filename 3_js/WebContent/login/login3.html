@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Log-in</title>
+
+
+</head>
+<body>
+<h3> Log-in Form</h3>
+
+<form action="login.jsp" method="get">
+<!-- action에는  서버의 데이터가 옴-->
+<!-- method에는 서버의 데이터를 옮기는 방식이 옴 -->
+
+
+	<table border="1"> 
+		<tbody>
+			<tr>
+				<td> <label for="id"> ID </label></td>
+				<td> <input type="text" id="id" name="id" value="" required="required"/> </td>
+			</tr>
+			<tr>
+				<td> <label for="pw"> PW </label></td>
+				<td> <input type="text" id="pw" name="pw" value="" required="required" 
+				pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{4,20}"/>  </td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="login">  <!--login 버튼을 누르면 위에 form action으로 가게 됨 => form의 action page로 전송-->
+					<input type="reset" value="cancel">
+					<a href="http://localhost:8000/1_html/users.html"> 회원가입 </a>
+					
+					</td>
+			</tr>
+		
+		</tbody>
+	
+	</table>
+	<br>
+	
+<a href="http://localhost:8000/1_html/index.html"> Home으로 돌아가기 </a>
+
+</form>
+
+
+<!--정규표현식 -->
+
+<!-- 숫자로 시작하고 abc로 끝나야 true -->
+<!--  /^[0-9]+abc$/-->
+
+<!-- 소문자,대문자, 숫자, 특수문자 순으로 들어있으면 true -->
+<!-- /[a-z][A-Z][0-9][^a-zA-Z0-9]/-->
+
+<!-- 대문자, 소문자, 숫자 특수문자가 순서에 상관없이 들어만 있으면 true -->
+<!-- /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])/ -->
+
+<!-- 위에 조건  + 자릿수 4이상 20이하 -->
+<!-- /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{4,20}/  -->
+
+</body>
+</html>

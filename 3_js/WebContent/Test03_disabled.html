@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>JavaScript</title>
+
+<style type="text/css">
+
+#result{
+	/* margin: 상하  좌우   -> 둘 사이에 comma 안들어감! */
+	margin: 30px 0;
+	/*margin-top: 30px;  => 이렇게 하면 위에랑 같음!*/
+	width:400px;
+	height:200px;
+	background-color: rgb(194,192,167);
+}
+</style>
+
+<script>
+function hello(){
+	return 'hello';
+}
+
+function world(){
+	return 'world';
+}
+
+function msg(){
+	let a = hello();
+	let b = world();
+	
+	document.getElementById('result').innerText = a+ " " +b;
+	document.getElementById('msg').value = a+ " " +b;
+				/* input창에는 무조건 value! 나머지는 다 innerText */
+	
+	console.log(a+" "+ b);
+
+}
+
+</script>
+
+
+</head>
+<body>
+
+<h3>JavaScript Function Test</h3>
+
+<button id="btn1" onclick="msg()">Button 1</button>
+<input type="text" id="msg" disabled="disabled">
+				<!-- disabled 되어 있으면 input 받지 못함! -->
+<div id="result"></div>
+
+
+</body>
+</html>

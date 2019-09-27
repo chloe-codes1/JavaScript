@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Node 생성</title>
+<style type="text/css">
+
+#target {
+	width: 400px;
+	height: 200px;
+	border: 2px solid gray;
+	overflow: scroll;
+}
+
+</style>
+
+<script type="text/javascript">
+
+window.onload = function () {
+	
+	// [ .onclick = function(){ } 사용 ]
+	document.querySelector("#btn1").onclick= function() {
+		document.querySelector("#target").innerHTML += "<h3>button 1 clicked</h3> "
+	}
+	// [ .addEventListener("click", function() { } 사용 )]
+	document.querySelector("#btn2").addEventListener('click', function () {
+		//alert('Button 2 clicked')
+		document.querySelector("#target").innerHTML += "<h3>button 2 clicked</h3> "
+	});
+}
+
+function addText(msg) {
+	//text에 입력한것 target에 출력되게 만들기
+	let node = document.createTextNode(msg);
+	document.querySelector("#target").appendChild(node);
+}
+
+</script>
+
+
+</head>
+<body>
+<br>
+
+<button id="btn1"> Button 1</button>
+<button id="btn2"> Button 2</button>
+
+<br><br>
+
+Type msg: <input type="text" id="msg"> <br><br>
+
+<div id="target" class="" onclick="addText('hello ')">여기를 클릭하세요!</div>
+
+
+
+</body>
+</html>

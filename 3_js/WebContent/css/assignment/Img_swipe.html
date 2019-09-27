@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Swipe Image</title>
+
+<style type="text/css">
+
+h3{
+	text-align: center;
+}
+
+div{
+	text-align: center;
+}
+
+
+
+#left{
+	padding: 10px;
+	margin: 20px;
+}
+
+#right{
+	padding: 10px;
+	margin: 20px;
+}
+
+#img{
+	border: 1px solid gray;
+}
+
+</style>
+
+</head>
+<body>
+
+<h3>Swipe Image</h3>
+	<div>
+	<button id="left" onclick="toLeft()"> ◁ </button>
+	
+	<img id="img" alt="" src="">
+	
+	<button id="right" onclick="toRight()"> ▷ </button>
+	</div>
+
+
+<script type="text/javascript">
+
+const log = console.log;
+let loc=0;
+
+let images = [
+	{"src" : "../img/avo.jpeg"},
+	{"src" : "../img/chubbyCat.jpg"},
+	{"src" : "../img/fajita.jpg"},
+	{"src" : "../img/gravy.jpg"},
+	{"src" : "../img/muchacho.jpg"},
+	{"src" : "../img/pancake.jpg"},
+]
+	
+
+
+let img = document.querySelector("#img");
+img.src = images[0].src;
+img.width= 400;
+img.height=400;
+
+//let left = document.querySelector("#left");
+//let right = document.querySelector("#right");
+
+
+
+
+//let getSrc = document.querySelector("#img").src;
+//let url = getSrc.substring(src.lastIndexOf('/'));
+
+
+function current(i) {
+	document.querySelector("#img").src	= images[i].src;
+}
+
+function toLeft() {
+	
+	if(loc==0){
+		loc = images.length -1;
+	} else {
+		loc = loc -1;
+	}
+	current(loc);	
+}
+
+function toRight(){
+	if(loc==images.length-1){
+		loc = 0; 
+	} else{
+		loc = loc+1;
+	}
+	current(loc);
+	
+}
+
+</script>
+	
+
+</body>
+</html>

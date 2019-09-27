@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>BOM Open Test</title>
+
+<style type="text/css">
+
+
+</style>
+
+
+
+
+</head>
+<body>
+
+	<h3>BOM Open Test</h3>
+	<br>
+	<form>
+		<input type="button" value="Google.com"
+			onclick="window.open('http://www.google.com', '_blank', 'width=1000, height=1000', true)">
+
+	</form>
+	<br>
+	<h3>Location 객체  Test</h3>
+	<a href="#" onclick="replace()">Google.com으로 가기</a>
+	<br><br>
+	
+	<h3>Navigator 객체  Test</h3>
+
+
+<script type="text/javascript">
+
+function replace() {
+	location.replace("http://www.google.com")
+}
+
+for( var key in navigator){
+	
+	value = navigator[key];
+	document.write(key + " : " + value + "<br>");
+	
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

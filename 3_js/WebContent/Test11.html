@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Img</title>
+
+<script type="text/javascript">
+
+const log = console.log;
+window.onload = function () {
+	
+	let img1 = document.querySelector("#img1");
+	img1.src= "./img/gravy.jpg";
+	img1.width=200;
+	img1.heihgt=200;
+	
+	//btn1 이벤트 처리
+	let btn1 = document.querySelector("#btn1");
+	
+	//JavaScript에서 onclick 달아주는 방식
+	btn1.onclick = function () {
+		alert("btn1 clicked!")
+		
+	};
+	
+	//link tag 이벤트 처리
+	let btn2 = document.querySelector("#btn2");
+
+	btn2.onclick = function () {
+		//-> call-back 함수
+		
+		// [confirm 창 사용]
+		return confirm("w3schools.com으로 갈까요?");
+	};
+};
+
+
+function change(){
+	
+	let src = document.querySelector("#img1").src;
+	let name = src.substring(src.lastIndexOf('/'));
+//	log(name)
+	if(name == "/gravy.jpg"){
+		document.querySelector("#img1").src = "./img/fajita.jpg";
+	}else{
+		document.querySelector("#img1").src = "./img/gravy.jpg";
+	}
+}
+
+
+</script>
+
+</head>
+<body>
+
+	<h3>Img Test</h3>
+	<button onclick="change()">Change Image</button>
+	<br>
+	<br>
+
+	<img id="img1" alt="" src="">
+
+	<br><br>
+	<button id="btn1">Button 1</button>
+	<a id="btn2" href="https://www.w3schools.com/">Button 2</a>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Calculator</title>
+
+<link rel="stylesheet" href="Prob03.css">
+</head>
+<body>
+
+<h3>계산기</h3>
+
+<table class="calc" border="1">
+
+<tbody class="body">
+	<tr><td colspan="5"> <input type="text" id="display"> </td></tr>
+	<tr>
+	  <td> <input type="button" value="7" class="button" id="keys" name="7" onclick="insert('7')"></td>
+	  <td> <input type="button" value="8" class="button" id="keys" name="8" onclick="insert('8')"></td>
+	  <td> <input type="button" value="9" class="button" id="keys" name="9" onclick="insert('9')"></td>
+	  <td colspan="2" > <input type="button" value="clear" class="button" id="keys" onclick="insert('c')" ></td>
+	</tr>
+	<tr>
+	  <td> <input type="button" value="4" class="button" id="keys" name="4" onclick="insert('4')"></td>
+	  <td> <input type="button" value="5" class="button" id="keys" name="5" onclick="insert('5')"></td>
+	  <td> <input type="button" value="6" class="button" id="keys" name="6" onclick="insert('6')"></td> 
+	  <td> <input type="button" value="/" class="button" id="keys" name="/" onclick="insert('/')"></td> 
+	  <td> <input type="button" value="%" class="button" id="keys" name="%" onclick="insert('%')"></td>
+	</tr>
+	<tr>
+	  <td> <input type="button" value="1" class="button" id="keys" name="1" onclick="insert('1')"></td>
+	  <td> <input type="button" value="2" class="button" id="keys" name="2" onclick="insert('2')"></td>
+	  <td> <input type="button" value="3" class="button" id="keys" name="3" onclick="insert('3')"></td> 
+	  <td> <input type="button" value="*" class="button" id="keys" name="*" onclick="insert('*')"></td> 
+	  <td> <input type="button" value="+" class="button" id="keys" name="+" onclick="insert('+')"></td>
+	</tr>
+	<tr>
+	  <td> <input type="button" value="0" class="button" id="keys" name="0" onclick="insert('0')"></td>
+	  <td> <input type="button" value="." class="button" id="keys" name="." onclick="insert('.')"></td>
+	  <td colspan="2"> <input type="button" value="=" class="button" id="keys" name="=" onclick="answer()"></td> 
+	  <td> <input type="button" value="-" class="button" id="equal" name="-"></td> 
+
+</tbody>
+
+</table>
+
+<script src="Prob03.js"></script>
+
+</body>
+</html>

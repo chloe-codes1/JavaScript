@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Calculator</title>
+
+<style type="text/css">
+table , tr, td{
+	border: 1px solid gray;
+	border-collapse: separate;
+	margin: 0 auto; /* 가운데 정렬!!! */
+}
+
+input.btn{
+	width: 70px;
+	height: 70px;
+	font-size: 20pt;
+	margin: 1px;
+}
+
+input.clr,.equal{
+	width:153px;
+	height: 70px;
+	font-size: 20pt;
+	margin: 1px;
+}
+
+#display{
+	width: 98%;
+	hegight: 70px;
+	margin: 1px;
+	border: 2px solid green;
+	font-size: 20pt;
+	text-align: right;
+	font-weight: bold;
+}
+
+</style>
+
+
+
+</head>
+<body>
+
+	<h3 align="center">계산기</h3>
+
+	<table>
+		<tbody>
+			<tr>
+			<td colspan=5><input type="text" id="display" name="display" value="0"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="7" class="btn"></td>
+				<td><input type="button" value="8" class="btn"></td>
+				<td><input type="button" value="9" class="btn"></td>
+				<td colspan="2"><input type="button" value="c" class="clr" onclick="c()"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" class="btn"></td>
+				<td><input type="button" value="5" class="btn"></td>
+				<td><input type="button" value="6" class="btn"></td>
+				<td><input type="button" value="/" class="btn"></td>
+				<td><input type="button" value="%" class="btn"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" class="btn"></td>
+				<td><input type="button" value="2" class="btn"></td>
+				<td><input type="button" value="3" class="btn"></td>
+				<td><input type="button" value="*" class="btn"></td>
+				<td><input type="button" value="+" class="btn"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="0" class="btn"></td>
+				<td><input type="button" value="." class="btn"></td>
+				<td colspan="2"><input type="button" value="=" class="equal" onclick = "e()"></td>
+				<td><input type="button" value="-" class="btn"></td>
+			
+			
+			</tr>
+
+		</tbody>
+
+	</table>
+
+
+<script>
+
+/* 전역 변수 log, disp, expression 선언 */
+const log = console.log;
+let disp = document.getElementById("display");
+let expression = ""; 
+    //-> 계산식이 들어갈 변수 expression (clear 해줘야 함!)
+
+
+let btn = document.getElementsByClassName("btn");
+
+//반복되는 attribute 코드로 한번에 생성하기
+for(let i = 0; i< btn.length ; i++){
+	// [setAttribute(name,value)]
+	// : attribute 추가하기      => element도 추가 가능~!
+	btn[i].setAttribute('onclick',"add('"+btn[i].value +"')");
+									//-> 연산기호 (문자) 처리하기 위해 '' 넣었다리~
+									//-> 숫자는 자동으로 type-castng 되므로 ' ' 넣어도 문제없이 처리됨
+}
+
+function add(data){
+	//alert(data);
+	expression += data;
+	disp.value = expression;
+//	log(data); //-> console 창에 찍어보려구~
+}
+
+function c(){
+	expression ="";
+	disp.value =0;
+}
+
+function e(){
+	
+	disp.value = eval(expression);
+	expression=""; 
+	//-> 계산 끝났으므로 expression 초기화하기
+	//-> 이거 안쓰면 계산 결과값 뒤에 새로 입력한 숫자가 붙는다!
+}
+
+</script>
+
+
+</body>
+</html>

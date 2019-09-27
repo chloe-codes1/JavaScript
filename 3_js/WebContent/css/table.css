@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+table{
+	width: 50%;
+	text-align: center;
+	border-collapse: collapse;
+	/*border를 한 줄로 만들어줌*/
+	
+	}
+
+table,tr,td,th{
+	border: 1px solid black;
+}
+
+tr {
+	color: navy;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+
+/*table의 class가 tablea일 때만 적용  */
+.tablea tr:nth-child(2n) {
+	background-color: silver;
+}
+
+.tablea tr:hover {
+	background-color:  yellow;
+	font-size: 105%;
+}
+
+td {
+	color: gray;
+	font-family: monospace;
+}
+
+table{
+	margin: 0 auto;
+	
+ }

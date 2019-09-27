@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>JavaScript 1</title>
+
+<!-- JavaScript 코드는 여기에 기술한다 -->
+
+ 
+<script type="text/javascript">
+
+	alert('Script Tag 영역 - 내부 자바 스크립트');
+	/* html tag가 parsing 되자마자 이 script tag가 실행됨 */
+	/* => web-browser에 html tag가 memory에 올라가기 전에 실행되었음 */
+	/* => 밑에 있는 html tag 이용할 수 없음! */
+	//document.write(" <h1>JavaScript Test<h1> "); 
+</script>
+
+
+<!-- 외부 자바스크립트 호출 -->
+<script src="./js/my.js"></script>
+
+
+</head>
+<body>
+
+	<h3>JavaScript 1</h3>
+
+	<!-- onclick: 이 버튼을 클릭 했을 때 실행하라 -->
+	<!-- alert: 단순 메세지 출력 / debugging용으로 많이 사용 / 메세지 창이 떠있는동안 다른 모든것은 blocked! -->
+	<button id="btn1" class="" onclick="alert('button click! inline 방식~ 와하하')">Button</button>
+	<button id="btn2" class="" onclick="f1()">Button2</button>
+	<button id="btn2" class="" onclick="f2()">Button3</button> <!-- my.js에 f1()만 있고 f2()는 없는데 호출함++ -->
+
+	<script type="text/javascript">
+		let constant
+		
+		alert('Script Tag 영역');
+		/* html tag가 parsing 되자마자 이 script tag가 실행됨 */
+		/* => 위에서는 web-browser에 html tag가 memory에 올라가기 전(dom tree가 완성되기 전)에 실행되었으나, 여기서 쓰면 위에 있는 html tag 사용 가능 */
+	</script>
+
+</body>
+</html>

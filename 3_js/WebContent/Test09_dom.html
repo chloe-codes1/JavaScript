@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>DOM</title>
+
+<script>
+	//window.onload= function(){}
+	//: web-browser의 모든 구성요소에 대한 로드가 긑났을 때 browser에 의해 호출되는 함수
+	
+	const log = console.log;
+	let h1;
+	
+	
+	window.onload = function() {
+//		document.getElementById("id1").style.backgroundColor = "red";
+		//-> 요 방식 올드한 방식,,, 그래서 querySelector 사용!
+
+		
+		// [.querySelector()]
+		// : 하나만 찾아올 때
+		
+		//css처럼 id는 #으로 표시
+//		document.querySelector("#id1").style.backgroundColor = "green";
+
+		//css처럼 class는 .으로 표시
+//		document.querySelector(".h3").style.backgroundColor = "yellow";
+		
+		// [.querySelectorAll()]
+		// : 모두 찾아올 때       
+//		document.querySelectorAll(".h3").style.backgroundColor = "yellow";
+		  //-> 배열이라서 이렇게 직접 출력 안됨! 에러 뜬다
+		  //-> 배열이라서 forLoop 써야한다
+		document.querySelectorAll(".h3")[0].style.backgroundColor = "yellow";
+		document.querySelectorAll(".h3")[1].style.backgroundColor = "yellow";
+		
+		
+//		document.querySelector("h1").style.color = "gray";
+	
+		h1 = document.querySelectorAll('h1');
+		
+		//ver1) 새로 나온 forLoop
+		for(let data of h1){
+			log(data);
+			data.style.color= "blue";
+			data.style.backgroundColor="gray";
+		}
+		
+		//ver2) 전통적인 forLoop
+		for(let i=0 ; i < h1.length ; i++){
+//			h1[i].style.color = "white";
+//			h1[i].style.backgroundColor= "gray";
+//			h1[i].innerHTML="h1 tag 내용 바꾼다~~"
+		}
+		
+	
+		
+		
+	}
+</script>
+
+</head>
+<body>
+	<h1 id="id1">JavaScript DOM</h1>
+
+	<h1>Process-h1</h1>
+	<h2>Process-h2</h2>
+	<h3 class="h3">Process-h3 (w/class)</h3>
+	<h3>Process-h3</h3>
+	<h4 class="h3">Process-h4 (w/class)</h4>
+	<h4>Process-h4</h4>
+
+
+</body>
+</html>

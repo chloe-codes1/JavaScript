@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Log-in</title>
+
+
+</head>
+<body>
+<h3> Log-in Form</h3>
+
+<form action="login.jsp" method="get">
+<!-- action에는  서버의 데이터가 옴-->
+<!-- method에는 서버의 데이터를 옮기는 방식이 옴 -->
+
+
+	<table border="1"> 
+		<tbody>
+			<tr>
+				<td> <label for="id"> ID </label></td>
+				<td> <input type="text" id="id" name="id" value=""/>  </td>
+			</tr>
+			<tr>
+				<td> <label for="pw"> PW </label></td>
+				<td> <input type="text" id="pw" name="pw" value=""/>  </td>
+			</tr>
+			<tr>
+				<td colspan="2">
+										<!-- onclick=" "으로 함수 호출  -->
+					<input type="submit" value="login" onclick="check()">  <!--login 버튼을 누르면 위에 form action으로 가게 됨 => form의 action page로 전송-->
+					<input type="reset" value="cancel">
+					<a href="http://localhost:8000/1_html/users.html"> 회원가입 </a>
+					
+					</td>
+			</tr>
+		
+		</tbody>
+	
+	</table>
+	<br>
+	
+<a href="http://localhost:8000/1_html/index.html"> Home으로 돌아가기 </a>
+
+</form>
+
+<script type="text/javascript">
+
+
+/* id 유효성 check */
+function check() {
+	
+	
+	let id = document.querySelector("#id");
+	let pw = document.querySelector("#pw");
+
+	if(id.value.trim().length < 5 ) {
+		alert("id는 5글자 이상 입력하세요!");
+		/* cursor를 id에 놓기 */
+		id.focus();
+		return false;
+	}
+	return true;
+}
+
+</script>
+
+
+</body>
+</html>
